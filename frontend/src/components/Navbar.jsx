@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 top-0 transition-all duration-500 ease-in-out px-4 sm:px-6 lg:px-8 mt-4`}>
       <div className={`mx-auto max-w-7xl rounded-full transition-all duration-500 ${scrolled ? 'glass-panel py-3 px-8 shadow-2xl' : 'bg-transparent py-4 px-4'}`}>
         <div className="flex justify-between items-center h-12">
-          
+
           <Link to="/" className="flex items-center space-x-2 group">
             <div className={`p-2 rounded-full transition-colors duration-300 ${scrolled ? 'bg-primary-50 text-primary-600' : 'bg-white/20 text-white backdrop-blur-md'}`}>
               <Plane className="h-6 w-6 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
@@ -28,20 +28,19 @@ const Navbar = () => {
               Wander<span className={scrolled ? 'text-gradient' : 'text-white/80'}>lust</span>
             </span>
           </Link>
-          
+
           <div className="hidden md:flex space-x-1 items-center">
             {['Home', 'Hotels', 'Restaurants', 'Planner'].map((item) => {
               const path = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
               const isActive = location.pathname === path;
               return (
-                <Link 
-                  key={item} 
-                  to={path} 
-                  className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
-                    isActive 
+                <Link
+                  key={item}
+                  to={path}
+                  className={`px-4 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${isActive
                       ? (scrolled ? 'bg-primary-50 text-primary-600' : 'bg-white/20 text-white')
                       : (scrolled ? 'text-gray-600 hover:bg-gray-100 hover:text-primary-600' : 'text-white/80 hover:bg-white/10 hover:text-white')
-                  }`}
+                    }`}
                 >
                   {item}
                 </Link>
@@ -73,9 +72,9 @@ const Navbar = () => {
           {['Home', 'Hotels', 'Restaurants', 'Planner'].map((item) => {
             const path = item === 'Home' ? '/' : `/${item.toLowerCase()}`;
             return (
-               <Link key={item} to={path} className="block px-4 py-3 rounded-2xl text-base font-bold text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">
-                 {item}
-               </Link>
+              <Link key={item} to={path} className="block px-4 py-3 rounded-2xl text-base font-bold text-gray-700 hover:text-primary-600 hover:bg-primary-50 transition-colors">
+                {item}
+              </Link>
             )
           })}
           <div className="border-t border-gray-200/50 my-4 pt-4 px-2 flex flex-col space-y-3">
